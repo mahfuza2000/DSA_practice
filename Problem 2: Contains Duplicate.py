@@ -33,7 +33,7 @@ class Solution:
       for j in range(i + 1, len(nums)):
         if nums[i] == nums[j]: # if any two elements are the same, return true
           return True
-    return False # if no duplicates are found, return false
+    return False 
 
 if __name__ == '__main__':
   sol = Solution()
@@ -61,5 +61,17 @@ class Solution:
         return True
       unique_set.add(x) # Add the current element to the set
 
-    return False # Return False if no duplicates found
+    return False 
+'''
+
+# Given Solution 3 (Sorting):
+'''
+class Solution:
+  def contains_duplicate(self, nums) -> bool:
+    nums.sort() # sort the array
+    # use a loop to compare each element with its next element
+    for i in range(len(nums) - 1):
+      if nums[i] == nums[i + 1]: # if any two elements are the same, return true
+        return True
+    return False 
 '''
