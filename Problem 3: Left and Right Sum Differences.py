@@ -66,6 +66,7 @@ class Solution:
         return differenceArray
 
 # Testing the solution
+'''
 solution = Solution()
 
 example1 = [2, 5, 1, 6, 1]
@@ -76,5 +77,5 @@ print(solution.findDifferenceArray(example1))  # Output: [13, 6, 0, 7, 14]
 print(solution.findDifferenceArray(example2))  # Output: [6, 0, 6]
 print(solution.findDifferenceArray(example3))  # Output: [14, 11, 6, 1, 10]
 
-'''
+# '''
 
