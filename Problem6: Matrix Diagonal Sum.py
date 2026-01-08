@@ -31,3 +31,43 @@ n == mat.length == mat[i].length
 '''
 
 # My Solution:
+class Solution:
+    def diagonalSum(self, mat):
+        total_sum = 0  # Initialize the total sum
+        row_num = len(mat) # Since this is a square matrix, we just need the rumber of rows
+        
+        # Go through each row of the square matrix, 
+        # add the value where matix row number and column number are equal, 
+        # then add the value that is opposite to that position
+        for row in range(row_num):
+            total_sum += mat[row][row] + mat[row][row_num - row -1]
+
+        # If the matrix has an odd number of rows/columns, then the above for-loop counted the center value twice. Subtract it.
+        if row_num % 2 == 1:
+            total_sum -= mat[row//2][row//2]  #Integer Division!!!
+        
+        return total_sum  # Return the calculated total sum
+
+# Given Solution:
+'''
+class Solution:
+    def diagonalSum(self, mat):
+        n = len(mat)  # Get the size of the matrix
+        total_sum = 0  # Initialize the total sum
+        
+        # Loop through each row
+        for i in range(n):
+            total_sum += mat[i][i] + mat[i][n-i-1]  # Add primary and secondary diagonal elements
+        
+        # If n is odd, subtract the central element
+        if n % 2 != 0:
+            total_sum -= mat[n//2][n//2]
+        return total_sum  # Return the calculated total sum
+    
+# Test the examples
+sol = Solution();
+print(sol.diagonalSum([[1,2,3],[4,5,6],[7,8,9]]))  # Output: 25
+print(sol.diagonalSum([[1,0],[0,1]]))  # Output: 2
+print(sol.diagonalSum([[5]]))  # Output: 5
+'''
+    
