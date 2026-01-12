@@ -86,7 +86,7 @@ range(start, stop, step)
  stop → where counting stops before (exclusive)
  step → how much to move each time
 '''
-class Solution:
+class Solution2:
     def nextLargerElement2(self, arr):
         n = len(arr)
         res = [-1]*n
@@ -99,7 +99,7 @@ class Solution:
                 res[i] = process_stack[-1]
             process_stack.append(arr[i])
         
-     return res
+        return res
 
 # Given Solution:
 class Solution:

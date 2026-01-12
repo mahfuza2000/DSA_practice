@@ -16,3 +16,52 @@ Examples
 '''
 
 # My Solution:
+class Solution2:
+    def sortStack(self,stack):
+        tempStack = []
+        
+        while stack:
+        #for i in range(len(stack)):
+            if len(tempStack) == 0 or tempStack[-1] <= stack[-1]:
+                tempStack.append(stack.pop())
+               #  print("\nTempStack: ", tempStack)
+               #  print("Stack: ", stack)
+            else:
+                holder = stack.pop()
+                while tempStack and tempStack[-1] > holder:
+                    stack.append(tempStack.pop())
+                  #   print("\nTempStack: ", tempStack)
+                  #   print("Stack: ", stack)
+                tempStack.append(holder)
+               #  print("\nTempStack: ", tempStack)
+               #  print("Stack: ", stack)
+
+        return tempStack
+
+# Given Solution:
+class Solution:
+    def sortStack(self, stack):
+        # Create an empty stack to store the sorted elements
+        tempStack = []
+        
+        # Continue sorting until the original stack is empty
+        while stack:
+            # Pop the top element from the original stack
+            temp = stack.pop()
+            
+            # Move elements from the temporary stack back to the original stack
+            # until we find the correct position for the current element
+            while tempStack and tempStack[-1] > temp:
+                stack.append(tempStack.pop())
+            
+            # Place the current element in its correct sorted position in the temporary stack
+            tempStack.append(temp)
+        
+        # Return the sorted stack
+        return tempStack
+
+# Example usage
+sol = Solution2()
+stack = [34, 3, 31, 98, 92, 23]
+print("Input: ", stack)
+print("Sorted Output: ", sol.sortStack(stack))
