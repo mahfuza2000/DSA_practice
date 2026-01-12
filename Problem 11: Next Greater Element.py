@@ -22,7 +22,12 @@ Example 1:
 '''
 
 # My Solution:
-
+'''
+range(start, stop, step)
+ start → where counting begins
+ stop → where counting stops before (exclusive)
+ step → how much to move each time
+'''
 
 
 
